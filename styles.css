@@ -43,6 +43,8 @@ label::after {
   transition: 0.5s;
 }
 
+/* GLASS TOGGLE */
+
 .glass-toggle + label {
   background-color: (0, 212, 255, 1);
   background: linear-gradient(
@@ -54,8 +56,9 @@ label::after {
 }
 
 /* glass effect from glassomorphism generator:  https://glassmorphism.com/ */
+
 .glass-toggle + label ::after {
-  backgorund-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.6);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(6px) px;
   -webkit-backdrop-filter: blur(6px);
@@ -64,5 +67,25 @@ label::after {
 }
 
 .glass-toggle:checked + label::after {
+  transform: translate(-18px);
+  /* background-color: rgba(255, 255, 255, 0.6); */
+}
+
+/* ON-OFF TOGGLE */
+
+.on-off-toggle + label {
+  background-color: hotpink;
+}
+
+.on-off-toggle + label::after {
+  background-color: #fff;
+}
+
+.on-off-toggle:checked + label {
+  background-color: darkgray;
+}
+
+.on-off-toggle:checked + label::after {
+  background-color: lightgray;
   transform: translate(-18px);
 }
