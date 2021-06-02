@@ -4,7 +4,22 @@
     <script src="script.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <style>
-   
+      /* LINE-TOGGLE */
+      .line-toggle + label {
+        height: 1px;
+        border: 5px solid darkcyan;
+        top: 12px;
+      }
+
+      .line-toggle + label::after {
+        top: -11px;
+        background-color: darkcyan;
+        background: linear-gradient(90deg, #0072b5, darkcyan);
+      }
+
+      .line-toggle:checked + label::after {
+        transform: translate(-27px);
+      }
     </style>
   </head>
   <body>
