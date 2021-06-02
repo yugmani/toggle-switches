@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="script.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+    <style>
+      .container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .toggle-container {
+        height: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      input[type='checkbox'] {
+        height: 0;
+        width: 0;
+        visibility: hidden;
+      }
+
+      label {
+        width: 50px;
+        height: 30px;
+        background-color: hotpink;
+        border-radius: 15px;
+        position: relative;
+        margin: 0.5em;
+        cursor: pointer;
+      }
+
+      label::after {
+        content: '';
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: #fff;
+        top: 3px;
+        left: 22px;
+        transition: 0.5s;
+      }
+
+      .glass-toggle + label {
+        background-color: (0, 212, 255, 1);
+        background: linear-gradient(
+          90deg,
+          rgba(2, 0, 36, 1) 0%,
+          rgba(9, 9, 121, 1) 35%,
+          rgba(0, 212, 255, 1) 100%
+        );
+      }
+
+      /* glass effect from glassomorphism generator:  https://glassmorphism.com/ */
+      .glass-toggle + label ::after {
+        backgorund-color: rgba(255, 255, 255, 0.6);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(6px) px;
+        -webkit-backdrop-filter: blur(6px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        box-sizing: border-box;
+      }
+
+      .glass-toggle:checked + label::after {
+        transform: translate(-18px);
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>How to code toggle switches with HTML and CSS</h1>
+      <div class="toggle-container">
+        <input type="checkbox" class="toggle glass-toggle" id="glass-toggle" />
+        <label for="glass-toggle"></label>
+
+        <input
+          type="checkbox"
+          class="toggle on-off-toggle"
+          id="on-off-toggle"
+        />
+        <label for="on-off-toggle"></label>
+
+        <input type="checkbox" class="toggle line-toggle" id="line-toggle" />
+        <label for="line-toggle"></label>
+      </div>
+
+      <a href="https://www.youtube.com/watch?v=zlymYW2RgtA"
+        >Reference: How to code toggle switches with HTML and CSS</a
+      >
+    </div>
+  </body>
+</html>
